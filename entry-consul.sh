@@ -1,14 +1,14 @@
 #!/bin/sh
 
 # join listed consul hosts
-if [ -z $CONSUL_HOST ]; then
-    echo "CONSUL_HOST is empty"
+if [ -z $CONSUL_JOIN ]; then
+    echo "CONSUL_JOIN is empty"
     exit 1
 fi
 
 JOIN_STR=""
-for node in $CONSUL_HOST; do
-    JOIN_STR="${JOIN_STR} -join ${node}"
+for node in $CONSUL_JOIN; do
+    JOIN_STR="${JOIN_STR} -retry-join ${node}"
 done
 
 cp /etc/consul.tpl.json /etc/consul.json
