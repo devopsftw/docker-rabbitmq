@@ -19,5 +19,6 @@ if [ $ret != 0 ]; then
     exit 1
 fi
 /usr/local/bin/consul agent -config-file /etc/consul.json $JOIN_STR &
+/usr/bin/telegraf &
 
 exec docker-entrypoint.sh "$@"
