@@ -12,7 +12,8 @@ for node in $CONSUL_JOIN; do
 done
 
 cp /etc/consul.tpl.json /etc/consul.json
-/usr/local/bin/ep /etc/consul.json
+cp /etc/rabbitmq/rabbitmq.tpl.config /etc/rabbitmq/rabbitmq.config
+/usr/local/bin/ep /etc/consul.json /etc/rabbitmq.config
 ret=$?
 if [ $ret != 0 ]; then
     echo "envplate failed, some env vars not set"
