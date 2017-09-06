@@ -1,4 +1,4 @@
-FROM rabbitmq:3.6.6
+FROM rabbitmq:3.6.11
 MAINTAINER Alex Salt <holy.cheater@gmail.com>
 
 ENV CONSUL_VERSION 0.7.0
