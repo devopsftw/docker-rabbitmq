@@ -2,7 +2,6 @@ FROM rabbitmq:3.6.11
 MAINTAINER Alex Salt <holy.cheater@gmail.com>
 
 ENV CONSUL_VERSION 0.7.0
-ENV RMQ_MEMORY_LIMIT 4G
 
 # install consul
 RUN apt-get update -qq && apt-get install -y --no-install-recommends ca-certificates wget unzip && \
@@ -20,7 +19,6 @@ COPY entry-consul.sh /usr/local/bin/
 COPY consul.tpl.json /etc/
 COPY qsize.sh /usr/local/bin/
 COPY telegraf.conf /etc/telegraf/
-COPY rabbitmq.tpl.config /etc/rabbitmq/
 
 ENTRYPOINT [ "entry-consul.sh" ]
 CMD [ "rabbitmq-server" ]

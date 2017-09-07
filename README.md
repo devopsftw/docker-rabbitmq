@@ -19,4 +19,5 @@ docker run -d \
 * CONSUL_SERVICE_NAME: service name to register in consul
 * INFLUX_HOST influxdb host to report metrics to
 * INFLUX_DB influxdb to report metrics to
-* RMQ_MEMORY_LIMIT (rabbitmq memory limit, defaults to 4G)
+* RABBITMQ_VM_MEMORY_HIGH_WATERMARK (rabbitmq memory limit)
+* RABBITMQ_HIPE_COMPILE (true/false, enable HiPE, should speed things up)
